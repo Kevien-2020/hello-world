@@ -5,16 +5,7 @@ import os
 
 from pygal_maps_world.maps import World
 from country_codes import get_country_code
-
-'''
-__location__ = os.path.realpath(os.path.join(
-    os.getcwd(), os.path.dirname(__file__)))
-
-# Load the data into a list.
-filename = 'population_data.json'
-openfile = open(os.path.join(
-    __location__, 'population_data.json'), encoding="utf8")
-'''
+from pygal.style import LightColorizedStyle as LCS, RotateStyle as RS
 
 filename = 'population_data.json'
 filepath = os.path.dirname(__file__) + '/json/' + filename
@@ -47,7 +38,8 @@ for cc, pop in cc_populations.items():
 # See how many countries are in each level.
 print(len(cc_pops_1), len(cc_pops_2), len(cc_pops_3))
 
-WM = World()
+WM_style = RS('#336699', base_style=LCS)
+WM = World(style=WM_style)
 WM.title = 'World Population in 2010, by Country'
 WM.add('0-10m', cc_pops_1)
 WM.add('10m-1bn', cc_pops_2)
