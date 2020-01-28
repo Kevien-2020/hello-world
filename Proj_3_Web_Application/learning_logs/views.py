@@ -11,6 +11,12 @@ def topics(request):
     context = {'topics': topics}
     return render(request, 'learning_logs/topics.html', context)
 
+def test_page_1(request):
+    """The home page for Learning Log."""
+    test = 1+1
+    context = {'test0001': test}
+    return render(request, 'learning_logs/test_page_1.html', context)
+
 def topic(request, topic_id):
     """Show a single topic and all its entries."""
     topic = Topic.objects.get(id=topic_id)
