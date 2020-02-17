@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # My apps
     'learning_logs',
     'users',
+
+    # Third party apps.
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +125,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# My settings
+LOGIN_URL = 'users:login'
+
+# Heroku settings.
+import django_heroku
+django_heroku.settings(locals())

@@ -12,9 +12,6 @@ urlpatterns = [
     # Page that shows all topics.
     path('topics/', views.topics, name='topics'),
 
-    # 測試頁面
-    path('test_page_1/', views.test_page_1, name='test_1'),
-
     # Detail page for a single topic.
     path('topics/<int:topic_id>/', views.topic, name='topic'),
 
@@ -24,6 +21,6 @@ urlpatterns = [
     # Page for adding a new entry
     path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
 
-    # Page for editing an entry
+    # Page for editing an entry.
     path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry'),
 ]
